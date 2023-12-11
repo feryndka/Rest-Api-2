@@ -5,13 +5,13 @@ import userRouter from "./router/userRouter";
 const app: Application = express();
 const PORT: number = 8800;
 
-app.use(cookieParser())
+app.use(cookieParser());
 
 app.use("/users", userRouter);
 
 //Middleware dalam express
 app.use((req: Request, res: Response, next: NextFunction) => {
-  const err = true;
+  const err = false;
 
   if (err) {
     res.status(500).send({
@@ -59,5 +59,5 @@ app.get("/ab?cd", (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Application run on port =>", PORT);
+  console.log("Application run on port :", PORT);
 });
