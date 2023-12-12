@@ -24,11 +24,11 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get("/", (req: Request, res: Response) => {
-  // console.log("Signed cookies =>", res.sign)
+  console.log("Cookies :", req.cookies);
 
-  res.send({
-    Hello: "World",
-  });
+  console.log("Signed Cookies :", req.signedCookies);
+
+  res.send("Hello World");
 });
 
 app.post("/", (req: Request, res: Response) => {
