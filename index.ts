@@ -1,13 +1,15 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import userRouter from "./router/userRouter";
+import studentRouter from "./router/studentRouter"
 
 const app: Application = express();
 const PORT: number = 8800;
 
 app.use(cookieParser());
 
-app.use("/users", userRouter);
+app.use("/api/users", userRouter);
+app.use("/api/students", studentRouter);
 
 //Middleware dalam express
 app.use((req: Request, res: Response, next: NextFunction) => {
