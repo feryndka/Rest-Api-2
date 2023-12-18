@@ -1,5 +1,5 @@
-import express, { Router, Request, Response, NextFunction } from "express";
-import db from "./../config/db";
+import express, { Router, Request, Response } from "express";
+import db from "../config/db-students";
 
 const router: Router = express.Router();
 
